@@ -45,8 +45,8 @@ for /f "skip=2 eol=} delims=" %%i in ('type "%SteamInstallPath%\steamapps\librar
     )
 )
 
-IF NOT !TaiwuFound!==true ECHO Did not find taiwu install folder in any steam library
-goto :eof
+REM IF NOT !TaiwuFound!==true ECHO Did not find taiwu install folder in any steam library
+REM goto :eof
 
 :Build
 if not exist "%~dp0\build" (mkdir "%~dp0\build")
