@@ -839,7 +839,8 @@ namespace CharFloatInfoKF
                 }
             }
             text.Append(seperator + "战" + DateFile.instance.GetActorDate(id, 993, true));
-            text.Append(seperator + "评价" + ActorRank.inst);
+            int totalRank = new ActorItem(id).Totalrank;
+            text.Append(seperator + "评价" + totalRank.ToString());
 
             return text.ToString();
         }
