@@ -1,0 +1,9 @@
+﻿{
+  "Id": "CharFloatInfoKF",
+  "DisplayName": "人物浮动信息-KF自制版",
+  "Author": "KF改编，原作者Vallind/东风有意/jmswzyk/inpay/ciwei100000/Morbilio",
+  "Version": "1.5.1",
+  "AssemblyName": "CharFloatInfoKF.dll",
+  "EntryMethod": "CharFloatInfoKF.Main.Load"
+
+}

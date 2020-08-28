@@ -1,0 +1,8 @@
+﻿{
+  "Id": "NpcScan-KF",
+  "DisplayName": "NpcScan-KF自用版",
+  "Author": "撒哈拉来的企鹅/沉浮山水/UnQ/inpayh/ciwei100000/KF",
+  "Version": "1.8.3.2",
+  "AssemblyName": "NpcScan-KF.dll",
+  "EntryMethod": "NpcScan.Main.Load"
+}
