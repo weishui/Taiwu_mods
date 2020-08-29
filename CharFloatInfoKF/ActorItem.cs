@@ -83,11 +83,12 @@ namespace CharFloatInfoKF
         public int Inv => intCache[8] = intCache[8] > -1 ? intCache[8] : int.Parse(DateFile.instance.GetActorDate(npcId, 65, !isGetReal));
         /// <summary>定力</summary>
         public int Pat => intCache[9] = intCache[9] > -1 ? intCache[9] : int.Parse(DateFile.instance.GetActorDate(npcId, 66, !isGetReal));
-        /// <summary>年龄</summary>
-        public int Age => int.Parse(DateFile.instance.GetActorDate(npcId, 11, false));
         /// <summary>性别：1男 2女 3男生女相 4女生男相</summary>
         public int Gender => int.Parse(DateFile.instance.GetActorDate(npcId, 14, false))
                              + int.Parse(DateFile.instance.GetActorDate(npcId, 17, false)) * 2;
+
+        /// <summary>年龄</summary>
+        public int Age => int.Parse(DateFile.instance.GetActorDate(npcId, 11, false));
         /// <summary>性别文字</summary>
         public string GenderText => (Gender > 2)
                                     // 处理男生女相和女生男相
@@ -155,12 +156,14 @@ namespace CharFloatInfoKF
 
             this.npcId = npcId;
             ActorName = DateFile.instance.GetActorName(npcId);
+            isGetReal = true;
+            isRank = true;
             //SamsaraNames = GetSamsaraNames(npcId);
 
             // 初始化缓存
             for (int i = 0; i < intCache.Length; i++)
                 intCache[i] = -1;
-            if (true)
+            if (isRank)
             {
                 // 初始化综合评分计算加权
                 totalRankWeight = new int[37];
@@ -170,7 +173,7 @@ namespace CharFloatInfoKF
                 totalRankWeight[3] = 1;// ui.BonValue;
                 totalRankWeight[4] = 1;// ui.IntValue;
                 totalRankWeight[5] = 1;// ui.PatValue;
-                totalRankWeight[6] = 1;// ui.CharmValue;
+                totalRankWeight[6] = 0;// ui.CharmValue;
                 for (int tmpi = 0; tmpi < 14; tmpi++)
                     totalRankWeight[7 + tmpi] = 1;// ui.Gongfa[tmpi];
                 for (int tmpi = 0; tmpi < 16; tmpi++)

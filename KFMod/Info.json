@@ -1,0 +1,9 @@
+﻿{
+  "Id": "KFMod",
+  "DisplayName": "KF自制综合Mod",
+  "Author": "KF",
+  "Version": "0.1.1",
+  "AssemblyName": "KFMod.dll",
+  "EntryMethod": "KFMod.Main.Load"
+
+}
